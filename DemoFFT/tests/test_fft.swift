@@ -37,9 +37,6 @@ func fft(sig:[Double], setup previous_setup:vDSP_DFT_SetupD?=nil) -> (realp:[Dou
 
 
 var N = Int(1 << 4)
-var repeatTime = 1000
-colorPrint("===== Start Python FFT Performance Test =====", color:"yellow")
-system("python2 tests/fft_numpy.py \(N) \(repeatTime)")
 
 var sig = [Double](count:N, repeatedValue:0)
 for i in 0..<N {

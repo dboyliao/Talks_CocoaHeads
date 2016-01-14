@@ -10,4 +10,4 @@ with Microphone(chunk_size = 8192) as source:
 
 subprocess.call("say -v Boing 'recording complete'", shell = True)
 
-audio.save("/Users/DboyLiao/Documents/SwiftEvents/CocoaHeads/DemoFFT/sound.wav")
+audio.save("/Users/DboyLiao/Documents/SwiftEvents/CocoaHeads/DemoFFT/demo/sound.wav")
