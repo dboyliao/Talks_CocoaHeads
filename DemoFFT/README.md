@@ -26,7 +26,7 @@
 
 ## Routine
 1. Create Setup
-    - According to the [document](https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vDSP_Programming_Guide/USingDFTFunctions/USingDFTFunctions.html#//apple_ref/doc/uid/TP40005147-CH4-SW1), you need to take care of **length** of the input signal.
+    - According to the [document](https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vDSP_Programming_Guide/USingDFTFunctions/USingDFTFunctions.html#//apple_ref/doc/uid/TP40005147-CH4-SW1), you need to take care of the **length** of the input signal.
     - This step is expensive in terms of execution time.
 2. Create Output Buffers.
 3. Execute FFT.
