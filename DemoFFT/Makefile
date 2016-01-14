@@ -1,4 +1,4 @@
-FFT_LENGTH=524288
+FFT_LENGTH=1024
 
 test-fft-osx:
 	cp tests/test_fft.swift tests/main.swift

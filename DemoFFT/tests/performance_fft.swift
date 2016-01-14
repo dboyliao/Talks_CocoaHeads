@@ -39,25 +39,33 @@ func fft(sig:[Double], setup previous_setup:vDSP_DFT_SetupD?=nil) -> (realp:[Dou
 var N = Int(Process.arguments[1])!
 var repeatTime = 1
 
-colorPrint("===== Start Python FFT Performance Test =====", color:"yellow")
-system("python2 tests/fft_numpy.py \(N) \(repeatTime)")
-
 var sig = [Double](count:N, repeatedValue:0)
 for i in 0..<N {
     sig[i] = Double(i+1)
 }
 
+colorPrint("===== Start Python FFT Performance Test =====", color:"yellow")
+system("python2 tests/fft_numpy.py \(N) \(repeatTime)")
+
+colorPrint("===== Start Swift FFT Performance Test ====", color:"yellow")
+
 var setup = vDSP_DFT_zop_CreateSetupD(nil, vDSP_Length(N), vDSP_DFT_Direction.FORWARD)
 
-func testPerformanceFFT() -> Int {
+func testPerformanceFFTNoSetup() -> Int {
 
-    let (a, b) = fft(sig, setup:setup)
-    print(a.count, b.count)
+    fft(sig)
 
     return 0
 }
 
-colorPrint("===== Start Swift FFT Performance Test ====", color:"yellow")
-testEqual("Swift FFT Performance Test", test: testPerformanceFFT, expect:0)
+func testPerformanceFFTWithSetup() -> Int {
+
+    fft(sig, setup:setup)
+
+    return 0
+}
+
+testEqual("Swift FFT Performance Test No Setup", test: testPerformanceFFTNoSetup, expect:0)
+testEqual("Swift FFT Performance Test With Setup", test: testPerformanceFFTWithSetup, expect:0)
 
 vDSP_DFT_DestroySetupD(setup)
