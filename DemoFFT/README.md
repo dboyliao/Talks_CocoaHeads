@@ -70,3 +70,10 @@ for i in 0..<N {
     + Otherwise, it is not.
 - Fast Fourier Transform is sexy.
 
+# References
+
+- [vDSP Reference](https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vDSP_Programming_Guide/USingDFTFunctions/USingDFTFunctions.html#//apple_ref/doc/uid/TP40005147-CH4-SW1)
+- [DFT v.s FFT](https://forums.developer.apple.com/thread/23321)
+- [Surge](https://github.com/mattt/Surge)
+- [Upsurge](https://github.com/aleph7/Upsurge)
+
