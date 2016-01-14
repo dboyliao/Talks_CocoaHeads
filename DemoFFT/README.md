@@ -8,6 +8,8 @@
     + XCode APP sucks!
 
 ![fuck_xcode](img/fuck_xcode.jpg)
+### *A picture is worth a thousand words... :)*
+[Pic. Origin](http://memegenerator.net/instance/52113798)
 
 - The tools I will use today is simple. Most of them should be familiar to you:
     + `Makefile` and `make`
@@ -32,7 +34,28 @@
 ## Snippets
 
 ```{swift}
+Import Accelerate
+
+var N = 16 // 16 samples
+var sig = [Double](count:N, repeatedValue:0)
+
+for i in 0..<N{
+    sig[i] = Double(i+1)
+}
+
+// Create setup
+// setup is a struct which contains neccessary information for fft.\
+var setup = vDSP_DFT_zop_CreateSetup(nil, vDSP_Length(N))
+
 ```
 
 ## Take Home Message
+- Someone's life is better **without** XCode. (Me!)
+- A comment in the `vDSP.h` suggests that you should use `vDSP_DFT_XXX` in place of `vDSP_fft_XXX`.
+    + To be honest, I don't know why.
+    + Let's assume that is true(?)
+    + See `/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Kernel.framework/Versions/Current/Headers/vecLib/vDSP.h`
+- `Accelerate` is fast if you use it in the right way.
+    + Otherwise, it is not.
+- Fast Fourier Transform is sexy.
 

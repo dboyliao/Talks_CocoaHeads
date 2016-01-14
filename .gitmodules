@@ -1,0 +1,3 @@
+[submodule "DemoFFT/SwiftTest"]
+	path = DemoFFT/SwiftTest
+	url = https://github.com/dboyliao/SwiftTest.git
