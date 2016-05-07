@@ -1,13 +1,19 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import subprocess
+import os
 from pyaudio_wrapper import Recorder, Microphone
 
-subprocess.call("say -v Boing 'recording start'", shell = True)
+def main():
+    subprocess.call(["say", "-v", "Boing" , "'recording start'"])
+    recorder = Recorder()
 
-recorder = Recorder()
-with Microphone(chunk_size = 8192) as source:
+    with Microphone(chunk_size = 8192, channels = 2) as source:
+        audio = recorder.record(source, max_pause_time = 1, verbose = True)
+        subprocess.call(["say", "-v", "Boing", "'recording complete'"])
 
-    audio = recorder.record(source, max_pause_time = 1, verbose = True)
+    path = os.path.abspath("../demo//sound.wav")
+    audio.save(path)
 
-subprocess.call("say -v Boing 'recording complete'", shell = True)
-
-audio.save("/Users/DboyLiao/Documents/SwiftEvents/CocoaHeads/DemoFFT/demo/sound.wav")
+if __name__ == "__main__":
+    main()
