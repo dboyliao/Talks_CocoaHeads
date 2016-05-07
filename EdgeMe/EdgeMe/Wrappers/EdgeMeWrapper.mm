@@ -10,7 +10,7 @@
 #import "EdgeMeWrapper.h"
 #include "EdgeMe.hpp"
 #include "opencv2/opencv.hpp"
-#include "opencv2/highgui/ios.h"
+#include "opencv2/imgcodecs/ios.h"
 
 @interface EdgeMeWrapper ()
 

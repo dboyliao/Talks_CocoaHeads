@@ -27,7 +27,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="EdgeMe"/>
                                 <connections>
-                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y82-kE-qqp"/>
+                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s8I-xD-cmG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbS-t5-TUv">
@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Pick"/>
                                 <connections>
-                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3sI-DX-b3V"/>
+                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="epF-iE-5Im"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDD-g4-lkJ">
@@ -43,7 +43,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
-                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vmh-8l-IN8"/>
+                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FR2-7K-Up1"/>
                                 </connections>
                             </button>
                         </subviews>

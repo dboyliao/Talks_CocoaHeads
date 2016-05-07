@@ -13,9 +13,9 @@
 		C79F820C1CDD8F4000078396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79F820A1CDD8F4000078396 /* Main.storyboard */; };
 		C79F820E1CDD8F4000078396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C79F820D1CDD8F4000078396 /* Assets.xcassets */; };
 		C79F82111CDD8F4000078396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79F820F1CDD8F4000078396 /* LaunchScreen.storyboard */; };
+		C7A311D21CE045D500934C93 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A311D11CE045D500934C93 /* UIImageExtensions.swift */; };
 		C7A603CE1CDDBD2C0041D7FD /* EdgeMe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A603CC1CDDBD2C0041D7FD /* EdgeMe.cpp */; };
 		C7A603D11CDDBD720041D7FD /* EdgeMeWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7A603D01CDDBD720041D7FD /* EdgeMeWrapper.mm */; };
-		C7A603D51CDE3EEE0041D7FD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A603D41CDE3EEE0041D7FD /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +28,12 @@
 		C79F820D1CDD8F4000078396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C79F82101CDD8F4000078396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C79F82121CDD8F4000078396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A311D11CE045D500934C93 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		C7A603CB1CDDBD2B0041D7FD /* EdgeMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EdgeMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7A603CC1CDDBD2C0041D7FD /* EdgeMe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EdgeMe.cpp; path = CppFiles/EdgeMe.cpp; sourceTree = "<group>"; };
 		C7A603CD1CDDBD2C0041D7FD /* EdgeMe.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EdgeMe.hpp; path = CppFiles/EdgeMe.hpp; sourceTree = "<group>"; };
 		C7A603D01CDDBD720041D7FD /* EdgeMeWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = EdgeMeWrapper.mm; path = Wrappers/EdgeMeWrapper.mm; sourceTree = "<group>"; };
 		C7A603D21CDDBD960041D7FD /* EdgeMeWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EdgeMeWrapper.h; path = Wrappers/EdgeMeWrapper.h; sourceTree = "<group>"; };
-		C7A603D41CDE3EEE0041D7FD /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		EBFA39C1A867E4A96F52CDD3 /* Pods-EdgeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EdgeMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EdgeMe/Pods-EdgeMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +89,7 @@
 			children = (
 				C79F82061CDD8F4000078396 /* AppDelegate.swift */,
 				C79F82081CDD8F4000078396 /* ViewController.swift */,
-				C7A603D41CDE3EEE0041D7FD /* UIImageExtension.swift */,
+				C7A311D11CE045D500934C93 /* UIImageExtensions.swift */,
 				C79F820A1CDD8F4000078396 /* Main.storyboard */,
 				C79F820D1CDD8F4000078396 /* Assets.xcassets */,
 				C79F820F1CDD8F4000078396 /* LaunchScreen.storyboard */,
@@ -243,8 +243,8 @@
 			files = (
 				C7A603CE1CDDBD2C0041D7FD /* EdgeMe.cpp in Sources */,
 				C79F82091CDD8F4000078396 /* ViewController.swift in Sources */,
+				C7A311D21CE045D500934C93 /* UIImageExtensions.swift in Sources */,
 				C7A603D11CDDBD720041D7FD /* EdgeMeWrapper.mm in Sources */,
-				C7A603D51CDE3EEE0041D7FD /* UIImageExtension.swift in Sources */,
 				C79F82071CDD8F4000078396 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = EdgeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spe3d.EdgeMe;
@@ -377,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = EdgeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spe3d.EdgeMe;

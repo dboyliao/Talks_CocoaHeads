@@ -35,58 +35,49 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    @IBAction func pressButton(sender: UIButton){
-        
+    @IBAction func pressButton(sender: UIButton) {
         switch sender {
         case self.edgeMeButton:
-            self.processImage()
-        
+            
+            if let image = self.imageView.image?.orientationUp {
+                let edgedImage = self.edgemeWrapper!.getProcessedImage(image)
+                let context = CIContext(options: nil)
+                let ciImage = CIImage(CGImage: edgedImage.CGImage!)
+                let filter = CIFilter(name: "CISepiaTone")!
+                filter.setValue(ciImage, forKey: kCIInputImageKey)
+                filter.setValue(0.8, forKey: kCIInputIntensityKey)
+                let outCIImage = filter.valueForKey(kCIOutputImageKey) as! CIImage
+                let finalCGImage = context.createCGImage(outCIImage, fromRect: outCIImage.extent)
+                
+                self.imageView.image = UIImage(CGImage: finalCGImage)
+            } else {
+                print("process fail.")
+            }
+            
         case self.cameraButton:
             let nextVC = UIImagePickerController()
             nextVC.sourceType = .Camera
             nextVC.cameraDevice = .Rear
             nextVC.delegate = self
             self.presentViewController(nextVC, animated: true, completion: nil)
-        
+            
         case self.pickButton:
             let nextVC = UIImagePickerController()
             nextVC.sourceType = .PhotoLibrary
             nextVC.delegate = self
             self.presentViewController(nextVC, animated: true, completion: nil)
-        
+            
         default:
             print("nothing!")
         }
-        
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
-        let space = CGImageGetColorSpace(image.CGImage)
-        print(space)
-        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.imageView.image = image
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    func processImage(){
-        
-        guard let image = self.imageView.image?.orientationUp else {
-            return
-        }
-        
-        let edgedImage = self.edgemeWrapper!.getProcessedImage(image)
-        let context = CIContext(options: nil)
-        let ciImage = CIImage(CGImage: edgedImage.CGImage!)
-        let filter = CIFilter(name: "CISepiaTone")!
-        filter.setValue(ciImage, forKey: kCIInputImageKey)
-        filter.setValue(0.8, forKey: kCIInputIntensityKey)
-        let outCIImage = filter.valueForKey(kCIOutputImageKey) as! CIImage
-        let finalCGImage = context.createCGImage(outCIImage, fromRect: outCIImage.extent)
-        
-        self.imageView.image = UIImage(CGImage: finalCGImage)
-    }
-
 
 }
 
