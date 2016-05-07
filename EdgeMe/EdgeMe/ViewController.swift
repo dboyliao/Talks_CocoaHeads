@@ -71,7 +71,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func processImage(){
         
-        guard let image = self.imageView.image else {
+        guard let image = self.imageView.image?.orientationUp else {
             return
         }
         
