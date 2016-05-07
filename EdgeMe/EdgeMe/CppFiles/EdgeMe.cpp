@@ -16,10 +16,17 @@ EdgeMe::EdgeMe(float alpha){
 }
 
 Mat EdgeMe::apply(Mat &image){
-    Mat_<uchar> grayScale;
-    grayScale.create(image.rows, image.cols);
     
-    cvtColor(image, grayScale, COLOR_BGR2GRAY);
+    if (image.channels() == 1){
+        cvtColor(image, image, COLOR_GRAY2BGR);
+    }
     
-    return grayScale;
+    Mat result = Mat(image.rows, image.cols, CV_8UC3, Scalar(0, 0, 0));
+    Mat_<uchar> mask;
+    Canny(image, mask, 60, 80);
+    
+    mask = 255 - mask;
+    image.copyTo(result, mask);
+    
+    return result;
 }

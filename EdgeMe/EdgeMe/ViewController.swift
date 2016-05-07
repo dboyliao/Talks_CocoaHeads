@@ -16,12 +16,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var pickButton:UIButton!
     @IBOutlet weak var imageView:UIImageView!
 
+    override func viewDidLoad() {
+        self.edgemeWrapper = EdgeMeWrapper(alph: 0.3)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if self.edgemeWrapper == nil {
-            self.edgemeWrapper = EdgeMeWrapper(alph: 0.3)
-        }
         
         if imageView.image == nil {
             self.edgeMeButton.enabled = false
@@ -62,9 +62,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
+        let space = CGImageGetColorSpace(image.CGImage)
+        print(space)
+        
         self.imageView.image = image
         picker.dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
     func processImage(){
@@ -73,8 +75,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return
         }
         
-        let newImage = self.edgemeWrapper!.getProcessedImage(image)
-        self.imageView.image = newImage
+        let edgedImage = self.edgemeWrapper!.getProcessedImage(image)
+        let context = CIContext(options: nil)
+        let ciImage = CIImage(CGImage: edgedImage.CGImage!)
+        let filter = CIFilter(name: "CISepiaTone")!
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        filter.setValue(0.8, forKey: kCIInputIntensityKey)
+        let outCIImage = filter.valueForKey(kCIOutputImageKey) as! CIImage
+        let finalCGImage = context.createCGImage(outCIImage, fromRect: outCIImage.extent)
+        
+        self.imageView.image = UIImage(CGImage: finalCGImage)
     }
 
 
