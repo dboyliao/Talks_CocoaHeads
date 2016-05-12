@@ -18,18 +18,10 @@ I told this to one of my collegue and he said:
 
 <img src="img/somebody_say.png" width=65% height=65% alt="somebody_say"/>
 
-As a result, I started to work on writing Obj-C++ wrapper for OpenCV in my Swift project.
+As a result, I started working on writing Obj-C++ wrapper for OpenCV in my Swift project.
 
 Finally, I managed to get OpenCV working without bugs.......
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -61,7 +53,7 @@ In this demo, I will go through following steps, which typically is the same pro
 
 That's all.
 
-Though as simple as it seem, I still have several bugs as I try to do it in the first time. I will point out what you should keep in mind in the following demo.
+Though as simple as it seem, I still got several bugs as I tried to do it for the first time. I will point out what you should keep in mind in the demo.
 
 ## Demo Time
 
@@ -79,7 +71,7 @@ Though as simple as it seem, I still have several bugs as I try to do it in the 
 
 - Watch out serious side effects.
 
-<img src="img/side_effect.jpg" width=65% height=65% />
+<img src="img/side_effect.png" width=65% height=65% />
 <br/>
 <br/>
 Just kidding :P
