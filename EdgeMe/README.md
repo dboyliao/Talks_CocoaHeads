@@ -57,7 +57,8 @@ Though as simple as it seem, I still got several bugs as I tried to do it for th
 
 ## Demo Time
 
-[Final Result (YouTube)](https://youtu.be/ADl2Mxp9sT8)
+- [CocoaHeads Taipe 2016/5/12 (Screen Record)](https://youtu.be/npdPb_kbPYk)
+- [Final Result (YouTube)](https://youtu.be/ADl2Mxp9sT8)
 
 ## Summary
 
@@ -77,3 +78,13 @@ Though as simple as it seem, I still got several bugs as I tried to do it for th
 Just kidding :P
 
 - Happy coding C++ + Obj-C++ + Swift!
+
+# Info
+
+We are hiring!
+
+- iOS developer
+- Android developer
+- Unity developer
+
+[Contact Us](http://www.spe3d.co)

@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageView:UIImageView!
 
     override func viewDidLoad() {
-        self.edgemeWrapper = EdgeMeWrapper(alph: 0.3)
+        self.edgemeWrapper = EdgeMeWrapper(cannyMin: 60, cannyMax: 80)
     }
     
     override func viewWillAppear(animated: Bool) {

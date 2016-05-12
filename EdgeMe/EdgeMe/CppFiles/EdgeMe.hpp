@@ -15,11 +15,11 @@
 using namespace cv;
 
 class EdgeMe {
-public:
-    float alpha;
+private:
+    double cannyMin, cannyMax;
 
 public:
-    EdgeMe(float alpha);
+    EdgeMe(double cannyMin, double cannyMax);
     Mat apply(Mat &image);
 };
 

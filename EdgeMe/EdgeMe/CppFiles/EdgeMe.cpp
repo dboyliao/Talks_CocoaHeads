@@ -11,8 +11,9 @@
 using namespace cv;
 using namespace std;
 
-EdgeMe::EdgeMe(float alpha){
-    this->alpha = alpha;
+EdgeMe::EdgeMe(double cannyMin, double cannyMax){
+    this->cannyMin = cannyMin;
+    this->cannyMax = cannyMax;
 }
 
 Mat EdgeMe::apply(Mat &image){
@@ -26,7 +27,7 @@ Mat EdgeMe::apply(Mat &image){
     
     Mat result = Mat(image.rows, image.cols, CV_8UC3, Scalar(0, 0, 0));
     Mat_<uchar> mask;
-    Canny(grayScale, mask, 60, 80);
+    Canny(grayScale, mask, this->cannyMin, this->cannyMax);
     
     mask = 255 - mask;
     image.copyTo(result, mask);

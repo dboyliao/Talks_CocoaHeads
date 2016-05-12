@@ -20,11 +20,11 @@
 
 @implementation EdgeMeWrapper
 
--(instancetype) initWithAlph:(float)alpha {
+-(instancetype) initWithCannyMin:(double)min cannyMax:(double)max {
     self = [super init];
     
     if (self) {
-        self.edgeMe = new EdgeMe(alpha);
+        self.edgeMe = new EdgeMe(min, max);
     }
     
     return self;

@@ -14,7 +14,7 @@
 
 @interface EdgeMeWrapper : NSObject
 
--(instancetype) initWithAlph:(float)alpha;
+-(instancetype) initWithCannyMin:(double)min cannyMax:(double)max;
 -(UIImage *)getProcessedImage:(UIImage *)fromImage;
 
 @end
